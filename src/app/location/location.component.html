@@ -1,0 +1,19 @@
+<h4>Locations</h4>
+<div *ngFor="let location of locations">
+  <h3>
+    <a [title]="location.name + ' details'">
+      {{ location.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="location.address">
+    Address: {{ location.address }}
+  </p>
+
+  <p>Hours: {{ location.hours[0] }} - {{ location.hours [location.hours.length - 1] }}</p>
+
+  <!-- <button (click)="share()">
+    Share
+  </button> -->
+
+</div>
