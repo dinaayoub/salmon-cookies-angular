@@ -21,7 +21,7 @@ Stack is front-end only that is able to be run on mobile as well as web apps. Wo
 
 ### Ratings and Reviews
 #### Documentation
-Thoughts go here
+Thoughts go here!
 
 #### Systems Requirements
 
