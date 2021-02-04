@@ -1,31 +1,56 @@
-<a href="index.html">Back to Main</a>
-<main>
+<main id="indexbody">
   <h1>Pat's Salmon Cookies</h1>
   <h3>Daily Sales Information</h3>
+  {{helloWorld()}}
   <section>
     <table>
-      <thead id="thead">
-      </thead>
-      <tbody id="tbody">
-      </tbody>
-      <tfoot id="tfoot">
-      </tfoot>
+      <tr>
+        <td>&nbsp;</td>
+        <th *ngFor="let hour of openHours">{{ hour }}</th>
+        <td>Totals</td>
+      </tr>
+      <tr *ngFor="let location of locations">
+        <td>{{location.name}}</td>
+        <td *ngFor="let hour of openHours">
+          {{location[hour]}}
+        </td>
+        <td>{{sumOfLocation(location)}}</td>
+      </tr>
+      <tr>
+        <td>Totals</td>
+        <td *ngFor="let hour of openHours">
+          <tfoot>{{sumOfHours(hour)}}</tfoot>
+        </td>
+        <td>
+          {{sumOfAll()}}
+        </td>
+      </tr>
     </table>
+
   </section>
-  <!-- <form id="form">
-    <fieldset> New Location
-      <label>Name
-        <input id="locationName" required name="locationName" type="text" />
-      </label>
-      <label> Min/Max Customers
-        <input id="minimumcustomers" required name="minimumcustomers" type="number" min="1">to</input>
-        <input id="maximumcustomers" required type="number" name="maximumcustomers" min="1">
-        </input>
-      </label>
-      <label> Sales
-        <input id="avgCookiesPerCustomer" required name="avgCookiesPerCustomer" type="number" min="0" step=".1">
+
+  <form id="form">
+    <fieldset> Add Location
+      <div>
+        <input class="inputs" id="locationName" placeholder="Location Name" required name="locationName" type="text" />
+      </div>
+      <div>
+        <input class="inputs" id="minimumcustomers" placeholder="Minimum Number of Customers Per Hour" required
+          name="minimumcustomers" type="number" min="1" />
+      </div>
+      <div>
+        <input class="inputs" id="maximumcustomers" placeholder="Maximum Number of Customers Per Hour" required
+          type="number" name="maximumcustomers" min="1" />
+      </div>
+      <div>
+        <input class="inputs" id="avgCookiesPerCustomer" placeholder="Average Cookies Sold Per Hour" required
+          name="avgCookiesPerCustomer" type="number" min="0" step=".1">
+      </div>
+      <div>
         <button id="submit">Submit</button>
-      </label>
+      </div>
+
     </fieldset>
-  </form> -->
+  </form>
+  <hr />
 </main>
