@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { locations } from './location';
+import { locations } from './locations_data';
 
 @Component({
   selector: 'app-location',

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { locations, openHours } from '../location/location';
+import { NgForm } from '@angular/forms'
+import { locations, openHours } from '../location/locations_data';
+import Location from '../location/location';
 
 @Component({
   selector: 'app-sales',
@@ -10,16 +12,18 @@ import { locations, openHours } from '../location/location';
 export class SalesComponent {
   locations = locations;
   openHours = openHours;
-  sumTotal = 0;
+  model = new Location('', '', openHours, 0, 0, 0);
 
-  helloWorld() {
-    console.log('in hello world');
+  constructor() {
+    this.randomNumberGenerator(locations);
+  }
+
+  randomNumberGenerator(locations) {
     for (let i = 0; i < locations.length; i++) {
       for (let j = 0; j < openHours.length; j++) {
         locations[i][openHours[j]] = (Math.floor(Math.random() * (locations[i].max - locations[i].min + 1)) + locations[i].min) * locations[i].averageCookiesPerCustomer;
       }
     }
-    console.log(locations);
   }
 
   sumOfHours(hour) {
@@ -36,14 +40,20 @@ export class SalesComponent {
     for (let i = 0; i < openHours.length; i++) {
       sum += location[openHours[i]];
     }
-    this.sumTotal += sum;
     return sum;
   }
 
-  sumOfAll() {
-    return this.sumTotal;
+  sumAll() {
+    let sum = 0;
+    locations.forEach(location => {
+      sum += this.sumOfLocation(location);
+    });
+    return sum;
   }
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale!');
+
+  onSubmit() {
+    console.log('hi there');
+    locations.push(this.model);
+    this.randomNumberGenerator([this.model]);
   }
 }

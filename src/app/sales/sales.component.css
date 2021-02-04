@@ -1,5 +1,5 @@
 #form {
-  width: 200%;
+  width: 100%;
 }
 
 #inputs {
@@ -12,4 +12,14 @@ table {
 
 button {
   margin: 16px 8px;
+}
+
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948;
+  /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+  /* red */
 }
