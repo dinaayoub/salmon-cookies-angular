@@ -5,31 +5,46 @@ export const locations = [
     id: 1,
     name: 'Seattle',
     address: '102 Pike St, Seattle, WA',
-    hours: openHours
+    hours: openHours,
+    min: 23,
+    max: 545,
+    averageCookiesPerCustomer: 3
   },
   {
     id: 2,
     name: 'Tokyo',
     address: '2 Chome-19-23 Aobadia, Merugo City, Tokyo, Japan',
-    hours: openHours
+    hours: openHours,
+    min: 23,
+    max: 245,
+    averageCookiesPerCustomer: 3
   },
   {
     id: 3,
     name: 'Dubai',
     address: 'Umm Hurair 2Dubai Healthcare City - Dubai - United Arab Emirates',
-    hours: openHours
+    hours: openHours,
+    min: 23,
+    max: 345,
+    averageCookiesPerCustomer: 3
   },
   {
     id: 4,
     name: 'Paris',
     address: '26 Avenue de l\'Opera, 75001 Paris, France',
-    hours: openHours
+    hours: openHours,
+    min: 23,
+    max: 145,
+    averageCookiesPerCustomer: 3
   },
   {
     id: 5,
     name: 'Lima',
     address: 'Av Paseo de la Republica 144, Lima 15001, Peru',
-    hours: openHours
+    hours: openHours,
+    min: 23,
+    max: 945,
+    averageCookiesPerCustomer: 3
   },
 ];
 
