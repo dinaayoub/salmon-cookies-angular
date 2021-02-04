@@ -1,7 +1,6 @@
 <main id="indexbody">
   <h1>Pat's Salmon Cookies</h1>
   <h3>Daily Sales Information</h3>
-  {{helloWorld()}}
   <section>
     <table>
       <tr>
@@ -22,35 +21,75 @@
           <tfoot>{{sumOfHours(hour)}}</tfoot>
         </td>
         <td>
-          {{sumOfAll()}}
+          {{ sumAll() }}
         </td>
       </tr>
     </table>
 
   </section>
 
-  <form id="form">
-    <fieldset> Add Location
+  <!-- <form id="form" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+    <fieldset>
+      <h3>Add Location</h3>
       <div>
-        <input class="inputs" id="locationName" placeholder="Location Name" required name="locationName" type="text" />
+        <input class="inputs" placeholder="Location Name" formControlName="name" type="text" />
       </div>
       <div>
-        <input class="inputs" id="minimumcustomers" placeholder="Minimum Number of Customers Per Hour" required
-          name="minimumcustomers" type="number" min="1" />
+        <input class="inputs" placeholder="Location Address" formControlName="address" type="text" />
       </div>
       <div>
-        <input class="inputs" id="maximumcustomers" placeholder="Maximum Number of Customers Per Hour" required
-          type="number" name="maximumcustomers" min="1" />
+        <input class="inputs" placeholder="Minimum Number of Customers Per Hour" required formControlName="min"
+          type="number" min="1" />
       </div>
       <div>
-        <input class="inputs" id="avgCookiesPerCustomer" placeholder="Average Cookies Sold Per Hour" required
-          name="avgCookiesPerCustomer" type="number" min="0" step=".1">
+        <input class="inputs" placeholder="Maximum Number of Customers Per Hour" required type="number"
+          formControlName="max" min="1" />
       </div>
       <div>
-        <button id="submit">Submit</button>
+        <input class="inputs" placeholder="Average Cookies Sold Per Hour" required
+          formControlName="averageCookiesPerCustomer" type="number" min="0" step=".1">
+      </div>
+      <div>
+        <button id="submit" type="submit">Submit</button>
       </div>
 
     </fieldset>
-  </form>
+  </form> -->
+
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" #locationForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Address</label>
+        <input type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address">
+
+      </div>
+
+      <div class="form-group">
+        <label for="min">Minimum Customers Per Hour</label>
+        <input type="text" class="form-control" id="min" [(ngModel)]="model.min" name="min">
+
+      </div>
+
+      <div class="form-group">
+        <label for="max">Maximum Customers Per Hour</label>
+        <input type="text" class="form-control" id="max" [(ngModel)]="model.max" name="max">
+
+      </div>
+
+      <div class="form-group">
+        <label for="averageCookiesPerCustomer">Average Cookies Per Customer</label>
+        <input type="text" class="form-control" id="averageCookiesPerCustomer"
+          [(ngModel)]="model.averageCookiesPerCustomer" name="averageCookiesPerCustomer">
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!locationForm.form.valid">Submit</button>
+    </form>
+  </div>
+
   <hr />
 </main>
