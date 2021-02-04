@@ -43,6 +43,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Links and Resources
 
+[Forms](https://angular.io/start/start-forms)
 [Routing pages](https://angular.io/start/start-routing)
 [Styling with Angular](https://angular.io/guide/component-styles)
 [Angular Tutorial](https://angular.io/start)
