@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms'
+// import { NgForm } from '@angular/forms'
 import { locations, openHours } from '../location/locations_data';
 import Location from '../location/location';
 
