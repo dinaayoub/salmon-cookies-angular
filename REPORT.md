@@ -68,6 +68,7 @@
 ### Code Demos
 
 * [github repository](https://github.com/dinaayoub/salmon-cookies-angular)
+* [deployed on netlify](https://salmon-cookies-angular.netlify.app/)
 
 ### Operating Instructions
 
